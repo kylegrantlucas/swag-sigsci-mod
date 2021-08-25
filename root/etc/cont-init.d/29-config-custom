@@ -3,3 +3,7 @@
 apk update && apk add wget
 wget https://apk.signalsciences.net/sigsci_apk.pub ; mv sigsci_apk.pub /etc/apk/keys
 echo https://apk.signalsciences.net/3.12/main | tee -a /etc/apk/repositories && apk update
+
+openssl rsa -pubin -in /etc/apk/keys/sigsci_apk.pub -text -noout
+
+apk add nginx-module-sigsci-nxo-1.20.1
