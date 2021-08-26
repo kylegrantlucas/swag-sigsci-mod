@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv bash
 
 
-apk del nginx
+apk del nginx nginx-mod-*
 
 apk add --repository=http://dl-cdn.alpinelinux.org/alpine/v3.12/main nginx 
 
