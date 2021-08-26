@@ -13,9 +13,10 @@ echo https://apk.signalsciences.net/3.14/main | tee -a /etc/apk/repositories && 
 
 openssl rsa -pubin -in /etc/apk/keys/sigsci_apk.pub -text -noout
 
-apk add sigsci-agent nginx-module-sigsci-nxo-1.21.1  || true
-
 rm -rf /etc/nginx && \
   cp -r /tmp/etc/nginx /etc/nginx && \
   mkdir -p /var/cache/nginx/client_temp && \
   rm -rf /tmp/etc/nginx
+
+apk add sigsci-agent nginx-module-sigsci-nxo-1.21.1  || true
+
