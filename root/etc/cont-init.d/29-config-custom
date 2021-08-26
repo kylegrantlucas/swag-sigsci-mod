@@ -3,7 +3,12 @@
 
 apk del nginx nginx-mod-*
 
+
 echo "@horsesmouth https://nginx.org/packages/mainline/alpine/v3.14/main" | tee -a /etc/apk/repositories >/dev/null
+
+wget -O /tmp/nginx_signing.rsa.pub https://nginx.org/keys/nginx_signing.rsa.pub ; mv /tmp/nginx_signing.rsa.pub /etc/apk/keys
+
+
 apk update && apk add nginx@horsesmouth wget
 
 wget https://apk.signalsciences.net/sigsci_apk.pub ; mv sigsci_apk.pub /etc/apk/keys
