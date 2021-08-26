@@ -23,7 +23,7 @@ if [ ! -f /usr/sbin/sigsci-agent ]; then
     #   mkdir -p /var/cache/nginx/client_temp && \
     #   rm -rf /tmp/etc/nginx
 
-    NGINX_VERSION=nginx -v |& sed 's/nginx version: nginx\///'
+    NGINX_VERSION= nginx -v |& sed 's/nginx version: nginx\///'
 
     apk add sigsci-agent nginx-module-sigsci-nxo-${NGINX_VERSION}  || true
 fi
