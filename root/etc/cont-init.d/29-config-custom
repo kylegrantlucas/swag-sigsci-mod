@@ -11,4 +11,4 @@ echo https://apk.signalsciences.net/3.12/main | tee -a /etc/apk/repositories && 
 
 openssl rsa -pubin -in /etc/apk/keys/sigsci_apk.pub -text -noout
 
-apk add nginx-module-sigsci-nxo-1.80.0
+apk add nginx-module-sigsci-nxo-1.18.0
