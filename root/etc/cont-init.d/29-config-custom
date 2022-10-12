@@ -13,7 +13,7 @@ if [ ! -f /usr/sbin/sigsci-agent ]; then
     apk update && apk add wget # nginx@nginx
 
     wget https://apk.signalsciences.net/sigsci_apk.pub ; mv sigsci_apk.pub /etc/apk/keys
-    echo https://apk.signalsciences.net/3.15/main | tee -a /etc/apk/repositories && apk update
+    echo https://apk.signalsciences.net/3.14/main | tee -a /etc/apk/repositories && apk update
 
     openssl rsa -pubin -in /etc/apk/keys/sigsci_apk.pub -text -noout
 
