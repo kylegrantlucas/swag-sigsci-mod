@@ -4,7 +4,7 @@
 
 if [ ! -f /usr/sbin/sigsci-agent ]; then
     echo "Installing SigSci Nginx Module and Agent"
-    # echo "@nginx https://nginx.org/packages/mainline/alpine/v3.14/main" | tee -a /etc/apk/repositories >/dev/null
+    # echo "@nginx https://nginx.org/packages/mainline/alpine/v3.15/main" | tee -a /etc/apk/repositories >/dev/null
 
     # wget -O /tmp/nginx_signing.rsa.pub https://nginx.org/keys/nginx_signing.rsa.pub ; mv /tmp/nginx_signing.rsa.pub /etc/apk/keys
 
@@ -13,7 +13,7 @@ if [ ! -f /usr/sbin/sigsci-agent ]; then
     apk update && apk add wget # nginx@nginx
 
     wget https://apk.signalsciences.net/sigsci_apk.pub ; mv sigsci_apk.pub /etc/apk/keys
-    echo https://apk.signalsciences.net/3.14/main | tee -a /etc/apk/repositories && apk update
+    echo https://apk.signalsciences.net/3.15/main | tee -a /etc/apk/repositories && apk update
 
     openssl rsa -pubin -in /etc/apk/keys/sigsci_apk.pub -text -noout
 
